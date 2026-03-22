@@ -10,7 +10,8 @@
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:seed:yihua": "tsx --tsconfig tsconfig.json scripts/seed-yihua-knowledge.ts",
-    "db:seed:yihua-code": "tsx --tsconfig tsconfig.json scripts/seed-yihua-code.ts"
+    "db:seed:yihua-code": "tsx --tsconfig tsconfig.json scripts/seed-yihua-code.ts",
+    "db:seed:demo": "tsx --tsconfig tsconfig.json scripts/seed-demo-data.ts"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.118",

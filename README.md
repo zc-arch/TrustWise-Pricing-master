@@ -125,15 +125,7 @@ npm run dev
 
 ## 六、数据库初始化与数据导入
 
-### 1) 生成/同步数据库结构
-
-```bash
-npm run db:push
-```
-
-### 2) 导入知识库元数据（资料/图/文献）
-
-```bash
+### 1) 生成/同步数
 npm run db:seed:yihua
 ```
 

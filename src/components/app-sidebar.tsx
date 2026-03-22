@@ -6,7 +6,6 @@ import {
   LayoutDashboard,
   MessageSquareText,
   FileText,
-  Network,
 } from "lucide-react"
 
 import {
@@ -23,6 +22,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { Logo } from "@/components/logo"
+import { KnowledgeGraphIcon } from "@/components/knowledge-graph-icon"
 
 const navItems = [
   {
@@ -34,7 +34,7 @@ const navItems = [
   {
     title: "价格预测知识图谱",
     url: "/yihua-code-graph",
-    icon: Network,
+    icon: KnowledgeGraphIcon,
     description: "市场资讯、企业经验、制度规则知识库",
   },
   {
@@ -74,18 +74,21 @@ export function AppSidebar() {
           <SidebarGroupLabel>导航菜单</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {navItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    render={<Link href={item.url} />}
-                    isActive={pathname === item.url || pathname.startsWith(item.url + "/")}
-                    tooltip={item.description}
-                  >
-                    <item.icon className="size-4" />
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {navItems.map((item) => {
+                const IconComponent = item.icon
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      render={<Link href={item.url} />}
+                      isActive={pathname === item.url || pathname.startsWith(item.url + "/")}
+                      tooltip={item.description}
+                    >
+                      <IconComponent className="size-4" />
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
